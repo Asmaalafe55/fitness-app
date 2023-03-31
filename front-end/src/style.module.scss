@@ -1,0 +1,14 @@
+.pageBody {
+  display: flex;
+  padding-top: 6vh;
+
+  .mainPage {
+    width: 88vw;
+    margin-left: auto;
+    padding: 20px 50px;
+    background-image: url(./pictures/BGGroup.png);
+    background-size: 100% 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+  }
+}
