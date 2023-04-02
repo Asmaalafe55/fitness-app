@@ -1,4 +1,4 @@
-# caps-lock-api
+# Fitness-app
 
 ### Installation steps:
 
