@@ -8,47 +8,38 @@ import { useEffect, useState } from 'react'
 import { userDataAtom } from '@/lib/store'
 
 const AppLayout = ({ children }) => {
-    const [userData, setUserData] = useRecoilState(userDataAtom)
-    const router = useRouter()
+  const [userData, setUserData] = useRecoilState(userDataAtom)
+  const router = useRouter()
 
-    useEffect(() => {
-        if (router.pathname.includes('/auth/')) {
-            return () => {}
-        }
+  console.log(1, router.pathname)
 
-        if (user?.data) {
-            setUserData({ role: user.data.role })
-        }
-
-        if (!isLoading) {
-            if (!user?.data) {
-                // we don't want the user to redirect back to the login page
-                // or any auth page
-                if (!router.pathname.includes('auth')) {
-                    localStorage.setItem('redirect', router.pathname)
-                    // router.push('/auth/login')
-                }
-            }
-        }
-    }, [router, setUserData])
-
-    // This ui loading is needed so that the font has time to load
-    useEffect(() => {
-        setTimeout(() => {
-            setUiLoading(false)
-        }, 100)
-    }, [])
-
-    if (!language || uiLoading) {
-        return <span>Loading...</span>
+  useEffect(() => {
+    if (router.pathname.includes('/auth/')) {
+      return () => {}
     }
 
-    // THIS NEEDS TO BE CHANGED
-    if (router.pathname.includes('/auth/') || router.pathname === '/404') {
-        return <AuthLayout>{children}</AuthLayout>
+    if (user?.data) {
+      setUserData({ role: user.data.role })
     }
 
-    return <MainLayout>{children}</MainLayout>
+    if (!isLoading) {
+      if (!user?.data) {
+        // we don't want the user to redirect back to the login page
+        // or any auth page
+        if (!router.pathname.includes('auth')) {
+          localStorage.setItem('redirect', router.pathname)
+          // router.push('/auth/login')
+        }
+      }
+    }
+  }, [router, setUserData])
+
+  // THIS NEEDS TO BE CHANGED
+  if (router.pathname.includes('/auth/') || router.pathname === '/404') {
+    return <AuthLayout>{children}</AuthLayout>
+  }
+
+  return <MainLayout>{children}</MainLayout>
 }
 
 export default AppLayout
