@@ -18,28 +18,28 @@ const AppLayout = ({ children }) => {
       return () => {}
     }
 
-    if (user?.data) {
-      setUserData({ role: user.data.role })
-    }
+    // if (user?.data) {
+    //   setUserData({ role: user.data.role })
+    // }
 
-    if (!isLoading) {
-      if (!user?.data) {
-        // we don't want the user to redirect back to the login page
-        // or any auth page
-        if (!router.pathname.includes('auth')) {
-          localStorage.setItem('redirect', router.pathname)
-          // router.push('/auth/login')
-        }
-      }
-    }
+    // if (!isLoading) {
+    //   if (!user?.data) {
+    //     // we don't want the user to redirect back to the login page
+    //     // or any auth page
+    //     if (!router.pathname.includes('auth')) {
+    //       localStorage.setItem('redirect', router.pathname)
+    //       // router.push('/auth/login')
+    //     }
+    //   }
+    // }
   }, [router, setUserData])
 
   // THIS NEEDS TO BE CHANGED
-  if (router.pathname.includes('/auth/') || router.pathname === '/404') {
-    return <AuthLayout>{children}</AuthLayout>
+  if (router.pathname.includes('/dashboard/') || router.pathname === '/404') {
+    return <MainLayout>{children}</MainLayout>
   }
 
-  return <MainLayout>{children}</MainLayout>
+  return <AuthLayout>{children}</AuthLayout>
 }
 
 export default AppLayout
