@@ -1,6 +1,6 @@
 import style from './AuthLayout.module.scss'
 import { useRecoilState } from 'recoil'
-import { toggleState } from '../../lib/store'
+import { toggleState, darkState } from '../../lib/store'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +12,7 @@ import imagesArray from '../../public/images/images'
 
 const AuthLayout = ({ children }) => {
   const [toggle, setToggle] = useRecoilState(toggleState)
+  const [dark, setDark] = useRecoilState(darkState)
 
   return (
     <>
@@ -61,8 +62,13 @@ const AuthLayout = ({ children }) => {
                   </li>
                 </ul>
                 <div>
-                  <FiSun />
-                  <FiMoon />
+                  <FiMoon
+                    className={`${style['theme']} ${
+                      dark ? '' + style.dark : ''
+                    }`}
+                    onClick={() => setDark(true)}
+                  />
+                  <FiSun onClick={() => setDark(false)} />
                 </div>
               </div>
             </>

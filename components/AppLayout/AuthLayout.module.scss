@@ -82,6 +82,11 @@
       width: auto;
       padding: 0.5rem;
       color: var(--black-color);
+
+      &[dark] {
+        background-color: var(--black-color);
+        color: var(--white-color);
+      }
     }
   }
 
@@ -98,5 +103,11 @@
 .element {
   &.hidden {
     display: none;
+  }
+}
+.theme {
+  &.dark {
+    background-color: var(--black-color);
+    color: var(--white-color);
   }
 }
