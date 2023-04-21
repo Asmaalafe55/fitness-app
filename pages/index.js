@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link.js'
 
 import style from '@/styles/Home.module.scss'
 import imagesArray from '../public/images/images.js'
@@ -8,7 +9,9 @@ export default function Home() {
     <div className={style.home_page}>
       <div className={style.header_left}>
         <div>Become Fitter, Stronger & More Confident !</div>
-        <button className={style.header_button}>Get Started</button>
+        <Link href="/auth/login" className={style.header_link}>
+          Get Started
+        </Link>
       </div>
       <div className={style.header_right}>
         <Image

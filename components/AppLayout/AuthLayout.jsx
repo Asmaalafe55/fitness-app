@@ -51,12 +51,15 @@ const AuthLayout = ({ children }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/" onClick={() => setToggle(false)}>
+                    <Link href="/auth/login" onClick={() => setToggle(false)}>
                       Sign In
                     </Link>
                   </li>
                   <li>
-                    <Link href="/" onClick={() => setToggle(false)}>
+                    <Link
+                      href="/auth/register"
+                      onClick={() => setToggle(false)}
+                    >
                       Sign Up
                     </Link>
                   </li>
