@@ -2,6 +2,7 @@
 .home_page {
   display: flex;
   width: 100%;
+  height: 100%;
   background-color: var(--white-color);
 
   .header_left {
@@ -51,7 +52,8 @@
 
   .header_right {
     img {
-      width: auto;
+      width: 600px;
+      height: 100%;
     }
   }
 }
