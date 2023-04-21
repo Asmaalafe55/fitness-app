@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 import { AiOutlineMenu } from 'react-icons/ai'
 import { HiX } from 'react-icons/hi'
+import { FiSun, FiMoon } from 'react-icons/fi'
 import imagesArray from '../../public/images/images'
 
 const AuthLayout = ({ children }) => {
@@ -59,6 +60,10 @@ const AuthLayout = ({ children }) => {
                     </Link>
                   </li>
                 </ul>
+                <div>
+                  <FiSun />
+                  <FiMoon />
+                </div>
               </div>
             </>
           )}
