@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import styles from '@/styles/Home.module.scss'
-import { pic1 } from '../public/images/images.js'
+import imagesArray from '../public/images/images.js'
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         Become Fitter, Stronger & More Confident !
       </h1>
       <button className={styles.header_button}>Get Started</button>
-      <Image src={pic1} width={100} height={100} />
+      <Image src={imagesArray.pic1} width={100} height={100} alt="homeImage" />
     </>
   )
 }

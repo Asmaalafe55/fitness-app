@@ -11,8 +11,6 @@ const AppLayout = ({ children }) => {
   const [userData, setUserData] = useRecoilState(userDataAtom)
   const router = useRouter()
 
-  console.log(1, router.pathname)
-
   useEffect(() => {
     if (router.pathname.includes('/auth/')) {
       return () => {}
