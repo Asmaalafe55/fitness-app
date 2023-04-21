@@ -70,7 +70,7 @@ const AuthLayout = ({ children }) => {
           )}
         </div>
       </div>
-      <div style={{ padding: '24px 12px', minHeight: 360 }}>{children}</div>
+      <div>{children}</div>
     </>
   )
 }
