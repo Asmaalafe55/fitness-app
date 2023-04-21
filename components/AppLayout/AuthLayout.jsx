@@ -15,7 +15,7 @@ const AuthLayout = ({ children }) => {
   return (
     <>
       <div className={style.auth_navbar}>
-        <div>
+        <div className={style.navbar_left_side}>
           <Link href="/">
             <Image
               className={style.logo_pic}
@@ -33,31 +33,33 @@ const AuthLayout = ({ children }) => {
             />
           </Link>
         </div>
-        <div>
+        <div className={style.menu}>
           <AiOutlineMenu
-            className={style.icon_menu}
+            className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
           />
           {toggle && (
             <>
-              <HiX className={style.icon_x} onClick={() => setToggle(false)} />
-              <ul className={style.list_links}>
-                <li>
-                  <Link href="/" onClick={() => setToggle(false)}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" onClick={() => setToggle(false)}>
-                    Sign In
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" onClick={() => setToggle(false)}>
-                    Sign Up
-                  </Link>
-                </li>
-              </ul>
+              <HiX onClick={() => setToggle(false)} />
+              <div className={style.list_container}>
+                <ul className={style.list_links}>
+                  <li>
+                    <Link href="/" onClick={() => setToggle(false)}>
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" onClick={() => setToggle(false)}>
+                      Sign In
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" onClick={() => setToggle(false)}>
+                      Sign Up
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </>
           )}
         </div>
