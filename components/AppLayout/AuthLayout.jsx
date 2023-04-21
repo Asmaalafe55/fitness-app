@@ -62,12 +62,7 @@ const AuthLayout = ({ children }) => {
                   </li>
                 </ul>
                 <div>
-                  <FiMoon
-                    className={`${style['theme']} ${
-                      dark ? '' + style.dark : ''
-                    }`}
-                    onClick={() => setDark(true)}
-                  />
+                  <FiMoon onClick={() => setDark(true)} />
                   <FiSun onClick={() => setDark(false)} />
                 </div>
               </div>

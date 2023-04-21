@@ -49,6 +49,7 @@
     width: 35px;
     height: 100%;
     color: var(--white-color);
+    cursor: pointer;
   }
 }
 
@@ -83,10 +84,10 @@
       padding: 0.5rem;
       color: var(--black-color);
 
-      &[dark] {
-        background-color: var(--black-color);
-        color: var(--white-color);
-      }
+      // &[dark] {
+      //   background-color: var(--black-color);
+      //   color: var(--white-color);
+      // }
     }
   }
 
@@ -107,7 +108,8 @@
 }
 .theme {
   &.dark {
-    background-color: var(--black-color);
-    color: var(--white-color);
+    background-color: var(--white-color);
+    border-radius: 50%;
+    color: var(--black-color);
   }
 }
