@@ -24,14 +24,16 @@ const AuthLayout = ({ children }) => {
               height={50}
               alt="logo"
             />
+            <Image
+              className={style.logo_fit_pic}
+              src={imagesArray.logo_fit}
+              width={100}
+              height={50}
+              alt="logo_fit"
+            />
           </Link>
-          <Image
-            className={style.logo_fit_pic}
-            src={imagesArray.logo_fit}
-            width={100}
-            height={50}
-            alt="logo_fit"
-          />
+        </div>
+        <div>
           <AiOutlineMenu
             className={style.icon_menu}
             onClick={() => setToggle(true)}
