@@ -7,12 +7,6 @@ import imagesArray from '../public/images/images.js'
 export default function Home() {
   return (
     <div className={style.home_page}>
-      <div className={style.header_left}>
-        <div>Become Fitter, Stronger & More Confident !</div>
-        <Link href="/auth/login" className={style.header_link}>
-          Get Started
-        </Link>
-      </div>
       <div className={style.header_right}>
         <Image
           src={imagesArray.pic1}
@@ -20,6 +14,12 @@ export default function Home() {
           height={100}
           alt="homeImage"
         />
+      </div>
+      <div className={style.header_left}>
+        <div>Become Fitter, Stronger & More Confident !</div>
+        <Link href="/auth/login" className={style.header_link}>
+          Get Started
+        </Link>
       </div>
     </div>
   )
