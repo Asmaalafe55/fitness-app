@@ -40,10 +40,20 @@ const AuthLayout = ({ children }) => {
             className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
           />
+          {/* <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+            <button onClick={onClick}>
+              {darkMode ? 'Light Mode' : 'Dark Mode'}
+            </button>
+          </div>
+           */}
           {toggle && (
             <>
               <HiX onClick={() => setToggle(false)} />
-              <div className={style.list_container}>
+              <div
+                className={`${style['list_container']} ${
+                  dark ? style.dark : ''
+                }`}
+              >
                 <ul className={style.list_links}>
                   <li>
                     <Link href="/" onClick={() => setToggle(false)}>
@@ -65,8 +75,18 @@ const AuthLayout = ({ children }) => {
                   </li>
                 </ul>
                 <div>
-                  <FiMoon onClick={() => setDark(true)} />
-                  <FiSun onClick={() => setDark(false)} />
+                  <FiMoon
+                    className={`${style['theme']} ${
+                      dark ? style.dark : style.moon
+                    }`}
+                    onClick={() => setDark(true)}
+                  />
+                  <FiSun
+                    className={`${style['theme']} ${
+                      !dark ? style.light : style.sun
+                    }`}
+                    onClick={() => setDark(false)}
+                  />
                 </div>
               </div>
             </>

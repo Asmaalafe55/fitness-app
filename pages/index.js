@@ -3,11 +3,14 @@ import Link from 'next/link.js'
 
 import style from '@/styles/Home.module.scss'
 import imagesArray from '../public/images/images.js'
+import { darkState } from '../lib/store.js'
+import { useRecoilValue } from 'recoil'
 
 export default function Home() {
+  const dark = useRecoilValue(darkState)
   return (
-    <div className={style.home_page}>
-      <div className={style.header_left}>
+    <div className={`${style['home_page']} ${dark ? style.dark : ''}`}>
+      <div className={`${style['header_left']} ${dark ? style.dark : ''}`}>
         <div>Become Fitter, Stronger & More Confident!</div>
         <Link href="/auth/login" className={style.header_link}>
           Get Started
