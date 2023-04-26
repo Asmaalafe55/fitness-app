@@ -32,7 +32,6 @@ const AppLayout = ({ children }) => {
     // }
   }, [router, setUserData])
 
-  // THIS NEEDS TO BE CHANGED
   if (router.pathname.includes('/dashboard/') || router.pathname === '/404') {
     return <MainLayout>{children}</MainLayout>
   }

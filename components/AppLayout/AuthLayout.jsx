@@ -40,12 +40,7 @@ const AuthLayout = ({ children }) => {
             className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
           />
-          {/* <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-            <button onClick={onClick}>
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
-          </div>
-           */}
+
           {toggle && (
             <>
               <HiX onClick={() => setToggle(false)} />
