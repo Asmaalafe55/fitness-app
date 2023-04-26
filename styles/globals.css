@@ -60,7 +60,7 @@
 html,
 body {
   font-family: 'Montserrat', sans-serif;
-
+  height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
 }
