@@ -73,7 +73,7 @@ const AuthLayout = ({ children }) => {
           )}
         </div>
       </div>
-      <div className={style.children_div}>{children}</div>
+      <div className={style.children}>{children}</div>
     </>
   )
 }
