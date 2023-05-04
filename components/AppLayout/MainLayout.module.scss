@@ -5,6 +5,10 @@
   background-color: var(--orange-color);
   display: flex;
   flex-direction: column;
+
+  img {
+    margin: 2rem;
+  }
 }
 .main_navbar {
   width: 100%;
