@@ -5,9 +5,22 @@
   background-color: var(--orange-color);
   display: flex;
   flex-direction: column;
-
-  img {
-    margin: 2rem;
+  a {
+    cursor: pointer;
+    img {
+      margin: 2rem;
+    }
+  }
+}
+.icons_section {
+  margin: 9rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    width: 1.5rem;
+    height: 2rem;
+    margin: 1.5rem;
   }
 }
 .main_navbar {
