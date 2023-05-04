@@ -7,56 +7,36 @@ import AuthLayout from './AuthLayout'
 import { useEffect, useState } from 'react'
 import { userDataAtom } from '@/lib/store'
 
-
-
 const AppLayout = ({ children }) => {
   const [userData, setUserData] = useRecoilState(userDataAtom)
   const router = useRouter()
 
   useEffect(() => {
     if (router.pathname.includes('/auth/')) {
-      return () => { }
+      return () => {}
     }
 
-    if (user?.data) {
-      setUserData({ role: user.data.role })
-    }
+    // if (user?.data) {
+    //   setUserData({ role: user.data.role })
+    // }
 
-    if (!isLoading) {
-      if (!user?.data) {
-        // we don't want the user to redirect back to the login page
-        // or any auth page
-        if (!router.pathname.includes('auth')) {
-          localStorage.setItem('redirect', router.pathname)
-          // router.push('/auth/login')
-        }
-      }
-    }
+    // if (!isLoading) {
+    //   if (!user?.data) {
+    //     // we don't want the user to redirect back to the login page
+    //     // or any auth page
+    //     if (!router.pathname.includes('auth')) {
+    //       localStorage.setItem('redirect', router.pathname)
+    //       // router.push('/auth/login')
+    //     }
+    //   }
+    // }
   }, [router, setUserData])
 
-
-
-  // This ui loading is needed so that the font has time to load
-  useEffect(() => {
-    setTimeout(() => {
-      setUiLoading(false)
-    }, 100)
-  }, [])
-
-  if (!language || uiLoading) {
-    return <span>Loading...</span>
+  if (router.pathname.includes('/dashboard/') || router.pathname === '/404') {
+    return <MainLayout>{children}</MainLayout>
   }
 
-  // THIS NEEDS TO BE CHANGED
-  if (router.pathname.includes('/auth/') || router.pathname === '/404') {
-    return (
-      <AuthLayout>{children}</AuthLayout>
-    )
-  }
-
-  return (
-    <MainLayout>{children}</MainLayout>
-  )
+  return <AuthLayout>{children}</AuthLayout>
 }
 
 export default AppLayout
