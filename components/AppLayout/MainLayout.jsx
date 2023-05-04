@@ -20,14 +20,24 @@ const MainLayout = ({ children }) => {
         <Link href="/">
           <Image src={imagesArray.logo} alt="logo" width={45} />
         </Link>
-        <div className={style.icons_section}>
+        <div className={style.sidebar_icons}>
           <MdOutlineTaskAlt />
           <BiMessageRounded />
           <MdOutlineAccountCircle />
           <BiHeart />
         </div>
       </div>
-      <div className={style.main_navbar}></div>
+      <div className={style.main_navbar}>
+        <div className={style.navbar_links}>
+          <Link href="/">Exercise</Link>
+          <Link href="/">Food Plan</Link>
+          <Link href="/">Calculators</Link>
+        </div>
+        <div className={style.navbar_icons}>
+          <MdOutlineNotificationsNone />
+          <BiUser />
+        </div>
+      </div>
       <div>{children}</div>
     </>
   )
