@@ -33,10 +33,10 @@ const AppLayout = ({ children }) => {
   }, [router, setUserData])
 
   if (router.pathname.includes('/dashboard/') || router.pathname === '/404') {
-    return <MainLayout>{children}</MainLayout>
+    return <AuthLayout>{children}</AuthLayout>
   }
 
-  return <AuthLayout>{children}</AuthLayout>
+  return <MainLayout>{children}</MainLayout>
 }
 
 export default AppLayout
