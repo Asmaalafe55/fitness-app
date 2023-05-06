@@ -4,7 +4,7 @@ import Link from 'next/link'
 import style from './MainLayout.module.scss'
 import imagesArray from '../../public/images/images'
 
-import { BiHeart, BiUser, BiMessageRounded } from 'react-icons/bi'
+import { BiHeart, BiUser, BiMessageRounded, BiMenu } from 'react-icons/bi'
 import {
   MdOutlineNotificationsNone,
   MdOutlineTaskAlt,
@@ -36,6 +36,7 @@ const MainLayout = ({ children }) => {
         <div className={style.navbar_icons}>
           <MdOutlineNotificationsNone />
           <BiUser />
+          <BiMenu />
         </div>
       </div>
       <div>{children}</div>

@@ -21,6 +21,7 @@
     width: 1.5rem;
     height: 2rem;
     margin: 1.5rem;
+    color: var(--white-color);
   }
 }
 .main_navbar {
@@ -29,6 +30,11 @@
   position: fixed;
   background-color: var(--black-color);
   display: flex;
+
   margin-left: 7rem;
   box-shadow: 10px 10px 100px rgba(174, 174, 192, 0.1);
+}
+.navbar_links {
+  display: flex;
+  color: var(--white-color);
 }
