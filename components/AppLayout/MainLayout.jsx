@@ -13,6 +13,7 @@ import {
   MdOutlineTaskAlt,
   MdOutlineAccountCircle
 } from 'react-icons/md'
+import { HiX } from 'react-icons/hi'
 
 const MainLayout = ({ children }) => {
   const router = useRouter()
@@ -46,6 +47,11 @@ const MainLayout = ({ children }) => {
             className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
           />
+          {toggle && (
+            <>
+              <HiX onClick={() => setToggle(false)} />
+            </>
+          )}
         </div>
       </div>
       <div>{children}</div>
