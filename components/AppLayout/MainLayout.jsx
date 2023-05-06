@@ -4,6 +4,9 @@ import Link from 'next/link'
 import style from './MainLayout.module.scss'
 import imagesArray from '../../public/images/images'
 
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { toggleMenuState, darkState } from '../../lib/store'
+
 import { BiHeart, BiUser, BiMessageRounded, BiMenu } from 'react-icons/bi'
 import {
   MdOutlineNotificationsNone,
@@ -13,6 +16,9 @@ import {
 
 const MainLayout = ({ children }) => {
   const router = useRouter()
+
+  const [toggle, setToggle] = useRecoilState(toggleMenuState)
+  const dark = useRecoilValue(darkState)
 
   return (
     <>
@@ -36,7 +42,10 @@ const MainLayout = ({ children }) => {
         <div className={style.navbar_icons}>
           <MdOutlineNotificationsNone />
           <BiUser />
-          <BiMenu />
+          <BiMenu
+            className={`${style['element']} ${toggle ? style.hidden : ''}`}
+            onClick={() => setToggle(true)}
+          />
         </div>
       </div>
       <div>{children}</div>
