@@ -63,4 +63,9 @@
     margin: 0 0.7rem;
     cursor: pointer;
   }
+  .element {
+    &.hidden {
+      display: none;
+    }
+  }
 }

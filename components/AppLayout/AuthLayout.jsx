@@ -1,6 +1,6 @@
 import style from './AuthLayout.module.scss'
 import { useRecoilState } from 'recoil'
-import { toggleState, darkState } from '../../lib/store'
+import { toggleState } from '../../lib/store'
 
 import Image from 'next/image'
 import Link from 'next/link'

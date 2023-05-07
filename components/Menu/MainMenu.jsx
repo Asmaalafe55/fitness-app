@@ -1,8 +1,16 @@
 import React from 'react'
+import Link from 'next/link'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
+import { toggleMenuState, darkState } from '../../lib/store'
+
+import { FiSun, FiMoon } from 'react-icons/fi'
+
+import style from './MainMenu.module.scss'
 
 const MainMenu = () => {
-  const setToggle = useSetRecoilState(toggleState)
+  const setToggle = useSetRecoilState(toggleMenuState)
+  const setDark = useSetRecoilState(darkState)
+  const dark = useRecoilValue(darkState)
 
   return (
     <>

@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
-import style from './MainLayout.module.scss'
 import imagesArray from '../../public/images/images'
+import style from './MainLayout.module.scss'
 
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { toggleMenuState, darkState } from '../../lib/store'
+import { useRecoilState } from 'recoil'
+import { toggleMenuState } from '../../lib/store'
 
-import { BiHeart, BiUser, BiMessageRounded, BiMenu } from 'react-icons/bi'
+import { BiHeart, BiMessageRounded, BiMenu } from 'react-icons/bi'
 import {
   MdOutlineNotificationsNone,
   MdOutlineTaskAlt,
@@ -15,11 +15,12 @@ import {
 } from 'react-icons/md'
 import { HiX } from 'react-icons/hi'
 
+import MainMenu from './../Menu/MainMenu'
+
 const MainLayout = ({ children }) => {
   const router = useRouter()
 
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
-  const dark = useRecoilValue(darkState)
 
   return (
     <>
@@ -42,7 +43,6 @@ const MainLayout = ({ children }) => {
         </div>
         <div className={style.navbar_icons}>
           <MdOutlineNotificationsNone />
-          <BiUser />
           <BiMenu
             className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
@@ -50,6 +50,7 @@ const MainLayout = ({ children }) => {
           {toggle && (
             <>
               <HiX onClick={() => setToggle(false)} />
+              <MainMenu />
             </>
           )}
         </div>
