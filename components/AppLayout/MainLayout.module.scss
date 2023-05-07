@@ -56,9 +56,15 @@
 }
 
 .navbar_icons {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
 
   svg {
+    height: 100%;
     color: var(--white-color);
     margin: 0 0.7rem;
     cursor: pointer;

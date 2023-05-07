@@ -21,6 +21,11 @@ const MainMenu = () => {
               Home
             </Link>
           </li>
+          <li>
+            <Link href="/" onClick={() => setToggle(false)}>
+              Logout
+            </Link>
+          </li>
         </ul>
         <div>
           <FiMoon
