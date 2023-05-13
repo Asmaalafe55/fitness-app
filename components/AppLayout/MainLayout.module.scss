@@ -16,12 +16,12 @@
     img {
       margin: 2rem;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       display: none;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     width: 100%;
     height: 5rem;
     bottom: 0;
@@ -43,11 +43,11 @@
     color: var(--white-color);
     cursor: pointer;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 800px) {
       margin: 1rem;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     flex-direction: row;
     margin: 0;
   }
@@ -66,7 +66,7 @@
   padding-right: 1rem;
   box-shadow: 10px 10px 100px rgba(174, 174, 192, 0.1);
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     flex-direction: row-reverse;
     padding-left: 1rem;
   }
@@ -82,7 +82,7 @@
   a {
     margin: 0 1.5rem;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 }
@@ -107,7 +107,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .notification_icon {
       display: none;
     }

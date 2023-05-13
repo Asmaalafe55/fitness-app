@@ -46,7 +46,9 @@ const MainMenu = () => {
             <div className={style.line}></div>
           </li>
           <li>
-            <MdOutlineLogout />
+            <MdOutlineLogout
+              className={`${style['theme']} ${dark ? style.sun : ''}`}
+            />
             <Link href="/" onClick={() => setToggle(false)}>
               Logout
             </Link>

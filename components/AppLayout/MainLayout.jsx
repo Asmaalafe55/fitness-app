@@ -22,8 +22,7 @@ const MainLayout = ({ children }) => {
   const router = useRouter()
 
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +37,7 @@ const MainLayout = ({ children }) => {
   }, [])
 
   const renderAdditionalDiv = () => {
-    if (windowWidth < 600) {
+    if (windowWidth < 800) {
       return (
         <Link href="/">
           <Image src={imagesArray.logo} alt="logo" width={45} />
