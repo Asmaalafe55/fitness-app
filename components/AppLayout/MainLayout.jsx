@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import imagesArray from '../../public/images/images'
@@ -22,17 +23,43 @@ const MainLayout = ({ children }) => {
 
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const renderAdditionalDiv = () => {
+    if (windowWidth < 600) {
+      return (
+        <Link href="/">
+          <Image src={imagesArray.logo} alt="logo" width={45} />
+        </Link>
+      )
+    }
+    return null
+  }
+
   return (
     <>
       <div className={style.main_sidebar}>
-        <Link href="/">
+        <Link href="/" className={style.logo}>
           <Image src={imagesArray.logo} alt="logo" width={45} />
         </Link>
         <div className={style.sidebar_icons}>
           <MdOutlineTaskAlt />
           <BiMessageRounded />
-          <MdOutlineAccountCircle />
+          {renderAdditionalDiv()}
           <BiHeart />
+          <MdOutlineAccountCircle />
         </div>
       </div>
       <div className={style.main_navbar}>
