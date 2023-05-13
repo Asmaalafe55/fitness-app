@@ -13,6 +13,8 @@
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
+  padding: 1rem 0;
+  font-weight: 500;
 
   &.dark {
     background-color: var(--black-color);
