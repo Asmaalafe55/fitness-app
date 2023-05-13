@@ -27,9 +27,20 @@
     align-items: center;
 
     li {
+      display: flex;
+      align-items: center;
       margin: 1.5rem 0rem;
+      svg {
+        color: var(--black-color);
+      }
+    }
+    .line {
+      height: 1px;
+      width: 200px;
+      background-color: #cecece;
     }
   }
+
   div {
     display: flex;
     flex-direction: row;

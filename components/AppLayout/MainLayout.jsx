@@ -69,7 +69,7 @@ const MainLayout = ({ children }) => {
           <Link href="/">Calculators</Link>
         </div>
         <div className={style.navbar_icons}>
-          <MdOutlineNotificationsNone />
+          <MdOutlineNotificationsNone className={style.notification_icon} />
           <BiMenu
             className={`${style['element']} ${toggle ? style.hidden : ''}`}
             onClick={() => setToggle(true)}
