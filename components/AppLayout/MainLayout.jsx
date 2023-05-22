@@ -18,9 +18,18 @@ import { HiX } from 'react-icons/hi'
 
 import MainMenu from './../Menu/MainMenu'
 
-const MainLayout = ({ children }) => {
+function NavLink({ href, children }) {
   const router = useRouter()
+  const isActive = router.pathname === href
 
+  return (
+    <a href={href} className={isActive ? style.activeLink : ''}>
+      {children}
+    </a>
+  )
+}
+
+const MainLayout = ({ children }) => {
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
   const [windowWidth, setWindowWidth] = useState(0)
 
@@ -56,33 +65,16 @@ const MainLayout = ({ children }) => {
         <div className={style.sidebar_icons}>
           <MdOutlineTaskAlt />
           <BiMessageRounded />
-          {/* {renderAdditionalDiv()} */}
+          {renderAdditionalDiv()}
           <BiHeart />
           <MdOutlineAccountCircle />
         </div>
       </div>
       <div className={style.main_navbar}>
         <div className={style.navbar_links}>
-          <Link
-            href="/exercise"
-            className={router.pathname === '/exercise' ? style.activeLink : ''}
-          >
-            Exercise
-          </Link>
-          <Link
-            href="/food-plan"
-            className={router.pathname === '/food-plan' ? style.activeLink : ''}
-          >
-            Food Plan
-          </Link>
-          <Link
-            href="/calculators"
-            className={
-              router.pathname === '/calculators' ? style.activeLink : ''
-            }
-          >
-            Calculators
-          </Link>
+          <NavLink href="/dashboard/exercise">Exercise</NavLink>
+          <NavLink href="/dashboard/food-plan">Food Plan</NavLink>
+          <NavLink href="/dashboard/calculators">Calculators</NavLink>
         </div>
         <div className={style.navbar_icons}>
           <MdOutlineNotificationsNone className={style.notification_icon} />
