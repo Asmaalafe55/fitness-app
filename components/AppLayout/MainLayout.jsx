@@ -63,9 +63,26 @@ const MainLayout = ({ children }) => {
       </div>
       <div className={style.main_navbar}>
         <div className={style.navbar_links}>
-          <Link href="/">Exercise</Link>
-          <Link href="/">Food Plan</Link>
-          <Link href="/">Calculators</Link>
+          <Link
+            href="/exercise"
+            className={router.pathname === '/exercise' ? style.activeLink : ''}
+          >
+            Exercise
+          </Link>
+          <Link
+            href="/food-plan"
+            className={router.pathname === '/food-plan' ? style.activeLink : ''}
+          >
+            Food Plan
+          </Link>
+          <Link
+            href="/calculators"
+            className={
+              router.pathname === '/calculators' ? style.activeLink : ''
+            }
+          >
+            Calculators
+          </Link>
         </div>
         <div className={style.navbar_icons}>
           <MdOutlineNotificationsNone className={style.notification_icon} />

@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   z-index: 5;
-  // padding-top: 3rem;
   justify-content: space-evenly;
 
   .logo {
@@ -111,5 +110,20 @@
     .notification_icon {
       display: none;
     }
+  }
+}
+
+.activeLink {
+  position: relative;
+  font-weight: bold;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--orange-color);
   }
 }
