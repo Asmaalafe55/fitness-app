@@ -38,24 +38,13 @@ const MainMenu = () => {
             <NavLink href="/">Home</NavLink>
           </li>
           <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Exercise
-            </Link>
+            <NavLink href="/dashboard/">Exercise</NavLink>
           </li>
           <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Food Plan
-            </Link>
+            <NavLink href="/dashboard/">Food Plan</NavLink>
           </li>
           <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Calculators
-            </Link>
-          </li>
-          <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Notifications
-            </Link>
+            <NavLink href="/dashboard/">Calculators</NavLink>
           </li>
           <li>
             <div className={style.line}></div>
