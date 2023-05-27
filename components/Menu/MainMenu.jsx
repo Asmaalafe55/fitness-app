@@ -1,4 +1,6 @@
 import React from 'react'
+import { useRouter } from 'next/router'
+
 import Link from 'next/link'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
 import { toggleMenuState, darkState } from '../../lib/store'
@@ -7,6 +9,21 @@ import { FiSun, FiMoon } from 'react-icons/fi'
 import { MdOutlineLogout } from 'react-icons/md'
 
 import style from './MainMenu.module.scss'
+
+function NavLink({ href, children }) {
+  const router = useRouter()
+  const isActive = router.pathname === href
+
+  return (
+    <a
+      href={href}
+      onClick={() => setToggle(false)}
+      className={isActive ? style.activeLink : ''}
+    >
+      {children}
+    </a>
+  )
+}
 
 const MainMenu = () => {
   const setToggle = useSetRecoilState(toggleMenuState)
@@ -18,9 +35,7 @@ const MainMenu = () => {
       <div className={`${style['list_container']} ${dark ? style.dark : ''}`}>
         <ul className={style.list_links}>
           <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Home
-            </Link>
+            <NavLink href="/">Home</NavLink>
           </li>
           <li>
             <Link href="/" onClick={() => setToggle(false)}>

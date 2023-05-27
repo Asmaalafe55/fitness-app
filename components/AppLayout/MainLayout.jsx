@@ -65,7 +65,7 @@ const MainLayout = ({ children }) => {
         <div className={style.sidebar_icons}>
           <MdOutlineTaskAlt />
           <BiMessageRounded />
-          {renderAdditionalDiv()}
+          {/* {renderAdditionalDiv()} */}
           <BiHeart />
           <MdOutlineAccountCircle />
         </div>
