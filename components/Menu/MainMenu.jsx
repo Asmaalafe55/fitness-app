@@ -18,7 +18,7 @@ function NavLink({ href, children }) {
     <a
       href={href}
       onClick={() => setToggle(false)}
-      className={isActive ? style.activeLink : ''}
+      className={isActive ? style.activeLink : style.unActiveLink}
     >
       {children}
     </a>

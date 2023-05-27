@@ -23,7 +23,7 @@ function NavLink({ href, children }) {
   const isActive = router.pathname === href
 
   return (
-    <a href={href} className={isActive ? style.activeLink : ''}>
+    <a href={href} className={isActive ? style.activeLink : style.unActiveLink}>
       {children}
     </a>
   )
