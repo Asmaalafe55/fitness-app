@@ -46,9 +46,11 @@ const MainMenu = () => {
           <li>
             <NavLink href="/dashboard/">Calculators</NavLink>
           </li>
-          <li>
-            <div className={style.line}></div>
-          </li>
+        </ul>
+
+        <div className={style.line}></div>
+
+        <div>
           <li>
             <MdOutlineLogout
               className={`${style['theme']} ${dark ? style.sun : ''}`}
@@ -57,16 +59,16 @@ const MainMenu = () => {
               Logout
             </Link>
           </li>
-        </ul>
-        <div>
-          <FiMoon
-            className={`${style['theme']} ${dark ? style.dark : style.moon}`}
-            onClick={() => setDark(true)}
-          />
-          <FiSun
-            className={`${style['theme']} ${!dark ? style.light : style.sun}`}
-            onClick={() => setDark(false)}
-          />
+          <div>
+            <FiMoon
+              className={`${style['theme']} ${dark ? style.dark : style.moon}`}
+              onClick={() => setDark(true)}
+            />
+            <FiSun
+              className={`${style['theme']} ${!dark ? style.light : style.sun}`}
+              onClick={() => setDark(false)}
+            />
+          </div>
         </div>
       </div>
     </>

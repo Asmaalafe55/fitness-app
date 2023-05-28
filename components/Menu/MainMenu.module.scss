@@ -32,24 +32,36 @@
     li {
       display: flex;
       align-items: center;
-      margin: 1.5rem 0rem;
+      margin: 1.5rem 0;
       svg {
         color: var(--black-color);
       }
     }
-    .line {
-      height: 1px;
-      width: 200px;
-      background-color: #cecece;
-    }
+  }
+  .line {
+    height: 1px;
+    width: 200px;
+    background-color: #cecece;
   }
 
   div {
     display: flex;
-    flex-direction: row;
-    svg {
-      width: auto;
-      padding: 0.5rem;
+    flex-direction: column;
+    div {
+      display: flex;
+      flex-direction: row;
+      svg {
+        width: auto;
+        padding: 0.5rem;
+      }
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      svg {
+        color: var(--black-color);
+      }
     }
   }
 

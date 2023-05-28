@@ -62,12 +62,26 @@ const MainLayout = ({ children }) => {
         <Link href="/" className={style.logo}>
           <Image src={imagesArray.logo} alt="logo" width={45} />
         </Link>
+
         <div className={style.sidebar_icons}>
-          <MdOutlineTaskAlt />
-          <BiMessageRounded />
+          <span className={style.tooltip}>
+            <MdOutlineTaskAlt />
+            <span className={style.tooltip_content}>Tasks</span>
+          </span>
+          <span className={style.tooltip}>
+            <BiMessageRounded />
+            <span className={style.tooltip_content}>Massages</span>
+          </span>
+
           {/* {renderAdditionalDiv()} */}
-          <BiHeart />
-          <MdOutlineAccountCircle />
+          <span className={style.tooltip}>
+            <BiHeart />
+            <span className={style.tooltip_content}>Favorits</span>
+          </span>
+          <span className={style.tooltip}>
+            <MdOutlineAccountCircle />
+            <span className={style.tooltip_content}>Profile</span>
+          </span>
         </div>
       </div>
       <div className={style.main_navbar}>
