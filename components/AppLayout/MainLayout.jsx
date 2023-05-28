@@ -29,6 +29,15 @@ function NavLink({ href, children }) {
   )
 }
 
+function Tooltip({ icon, content }) {
+  return (
+    <span className={style.tooltip}>
+      {icon}
+      <span className={style.tooltip_content}>{content}</span>
+    </span>
+  )
+}
+
 const MainLayout = ({ children }) => {
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
   const [windowWidth, setWindowWidth] = useState(0)
@@ -64,24 +73,11 @@ const MainLayout = ({ children }) => {
         </Link>
 
         <div className={style.sidebar_icons}>
-          <span className={style.tooltip}>
-            <MdOutlineTaskAlt />
-            <span className={style.tooltip_content}>Tasks</span>
-          </span>
-          <span className={style.tooltip}>
-            <BiMessageRounded />
-            <span className={style.tooltip_content}>Massages</span>
-          </span>
-
+          <Tooltip icon={<MdOutlineTaskAlt />} content="Tasks" />
+          <Tooltip icon={<BiMessageRounded />} content="Messages" />
           {/* {renderAdditionalDiv()} */}
-          <span className={style.tooltip}>
-            <BiHeart />
-            <span className={style.tooltip_content}>Favorits</span>
-          </span>
-          <span className={style.tooltip}>
-            <MdOutlineAccountCircle />
-            <span className={style.tooltip_content}>Profile</span>
-          </span>
+          <Tooltip icon={<BiHeart />} content="Favorites" />
+          <Tooltip icon={<MdOutlineAccountCircle />} content="Profile" />
         </div>
       </div>
       <div className={style.main_navbar}>
