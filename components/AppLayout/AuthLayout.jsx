@@ -13,9 +13,12 @@ import AuthMenu from './../Menu/AuthMenu'
 
 const AuthLayout = ({ children }) => {
   const [toggle, setToggle] = useRecoilState(toggleState)
+  const divStyles = {
+    height: '100vh'
+  }
 
   return (
-    <>
+    <div style={divStyles}>
       <div className={style.auth_navbar}>
         <div className={style.navbar_left_side}>
           <Link href="/">
@@ -50,7 +53,7 @@ const AuthLayout = ({ children }) => {
         </div>
       </div>
       <div className={style.children}>{children}</div>
-    </>
+    </div>
   )
 }
 
