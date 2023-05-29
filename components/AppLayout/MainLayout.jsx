@@ -41,7 +41,7 @@ function Tooltip({ icon, content, isActive }) {
 
 const MainLayout = ({ children }) => {
   const [toggle, setToggle] = useRecoilState(toggleMenuState)
-  const [windowWidth, setWindowWidth] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const MainLayout = ({ children }) => {
   }, [])
 
   const renderAdditionalDiv = () => {
-    if (windowWidth < 800) {
+    if (windowWidth && windowWidth < 800) {
       return (
         <Link href="/">
           <Image src={imagesArray.logo} alt="logo" width={45} />
@@ -85,7 +85,7 @@ const MainLayout = ({ children }) => {
             content="Messages"
             isActive={router.pathname.includes('/dashboard/messages')}
           />
-          {/* {renderAdditionalDiv()} */}
+          {renderAdditionalDiv()}
           <Tooltip
             icon={<BiHeart />}
             content="Favorites"
