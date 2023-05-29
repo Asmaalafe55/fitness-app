@@ -30,9 +30,11 @@ function NavLink({ href, children }) {
 
 function Tooltip({ icon, content, isActive }) {
   return (
-    <span className={`${style.tooltip} ${isActive ? style.active : ''}`}>
-      {icon}
-      <span className={style.tooltip_content}>{content}</span>
+    <span className={isActive ? style.icon_active : ''}>
+      <span className={style.tooltip}>
+        {icon}
+        <span className={style.tooltip_content}>{content}</span>
+      </span>
     </span>
   )
 }
@@ -76,7 +78,7 @@ const MainLayout = ({ children }) => {
           <Tooltip
             icon={<MdOutlineTaskAlt />}
             content="Tasks"
-            isActive={router.pathname.includes('/')}
+            isActive={router.pathname.includes('/dashboard/tasks')}
           />
           <Tooltip
             icon={<BiMessageRounded />}
