@@ -63,3 +63,46 @@
     border-radius: 50%;
   }
 }
+
+.activeLink {
+  position: relative;
+  font-weight: bold;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--orange-color);
+
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.unActiveLink {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gray-color);
+
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    width: 30px;
+  }
+}

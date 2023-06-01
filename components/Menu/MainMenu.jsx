@@ -1,16 +1,16 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-
 import Link from 'next/link'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
-import { toggleMenuState, darkState } from '../../lib/store'
 
+import { toggleMenuState, darkState } from '../../lib/store'
 import { FiSun, FiMoon } from 'react-icons/fi'
 import { MdOutlineLogout } from 'react-icons/md'
 
 import style from './MainMenu.module.scss'
 
 function NavLink({ href, children }) {
+  const setToggle = useSetRecoilState(toggleMenuState)
   const router = useRouter()
   const isActive = router.pathname === href
 

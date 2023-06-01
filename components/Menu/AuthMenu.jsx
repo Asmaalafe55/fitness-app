@@ -1,14 +1,28 @@
 import React from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useSetRecoilState, useRecoilState } from 'recoil'
+
 import { toggleState, darkState } from '../../lib/store'
-
 import { FiSun, FiMoon } from 'react-icons/fi'
-
 import style from './AuthMenu.module.scss'
 
-const AuthMenu = () => {
+function NavLink({ href, children }) {
   const setToggle = useSetRecoilState(toggleState)
+  const router = useRouter()
+  const isActive = router.pathname === href
+
+  return (
+    <a
+      href={href}
+      onClick={() => setToggle(false)}
+      className={isActive ? style.activeLink : style.unActiveLink}
+    >
+      {children}
+    </a>
+  )
+}
+
+const AuthMenu = () => {
   const [dark, setDark] = useRecoilState(darkState)
 
   return (
@@ -16,19 +30,13 @@ const AuthMenu = () => {
       <div className={`${style['list_container']} ${dark ? style.dark : ''}`}>
         <ul className={style.list_links}>
           <li>
-            <Link href="/" onClick={() => setToggle(false)}>
-              Home
-            </Link>
+            <NavLink href="/">Home</NavLink>
           </li>
           <li>
-            <Link href="/auth/login" onClick={() => setToggle(false)}>
-              Sign In
-            </Link>
+            <NavLink href="/auth/login">Sign In</NavLink>
           </li>
           <li>
-            <Link href="/auth/register" onClick={() => setToggle(false)}>
-              Sign Up
-            </Link>
+            <NavLink href="/auth/register"> Sign Up</NavLink>
           </li>
         </ul>
         <div>
