@@ -1,0 +1,7 @@
+@import '../../../../styles/Home.module.scss';
+@import '../../../../styles/buttons.module.scss';
+
+.bmi_container {
+  @extend .dashboard_style;
+  //   @extend .button_type1;
+}
