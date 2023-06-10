@@ -16,11 +16,15 @@ const Bmi = () => {
   }
   return (
     <div className={style.bmi_container}>
-      <div>BMI Calculator</div>
-      <p>a paragragh</p>
+      <div className="title">BMI Calculator</div>
+      <p>
+        Overrideds on hanging fruits to identify ball park value added activity
+        to beta overrided the digitals divided with additionals clickthroughs
+        from line.
+      </p>
       <div>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="weight">Weight (kg):</label>
+          <label htmlFor="weight">Weigh/kg</label>
           <input
             type="number"
             id="weight"
@@ -29,7 +33,7 @@ const Bmi = () => {
             required
           />
 
-          <label htmlFor="height">Height (cm):</label>
+          <label htmlFor="height">Height/cm</label>
           <input
             type="number"
             id="height"
@@ -38,7 +42,7 @@ const Bmi = () => {
             required
           />
 
-          <label htmlFor="age">Age:</label>
+          <label htmlFor="age">Age</label>
           <input
             type="number"
             id="age"
@@ -47,7 +51,7 @@ const Bmi = () => {
             required
           />
 
-          <label htmlFor="gender">Gender:</label>
+          <label htmlFor="gender">Gender</label>
           <select
             id="gender"
             value={gender}

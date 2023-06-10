@@ -87,3 +87,13 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
+
+.title {
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 48px;
+  width: 100%;
+  padding: 2rem;
+
+  text-transform: uppercase;
+}
