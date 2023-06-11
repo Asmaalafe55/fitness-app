@@ -22,17 +22,9 @@ const Bmi = () => {
         to beta overrided the digitals divided with additionals clickthroughs
         from line.
       </p>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="weight">Weigh/kg</label>
-          <input
-            type="number"
-            id="weight"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            required
-          />
 
+      <form onSubmit={handleSubmit}>
+        <div>
           <label htmlFor="height">Height/cm</label>
           <input
             type="number"
@@ -42,6 +34,16 @@ const Bmi = () => {
             required
           />
 
+          <label htmlFor="weight">Weigh/kg</label>
+          <input
+            type="number"
+            id="weight"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            required
+          />
+        </div>
+        <div>
           <label htmlFor="age">Age</label>
           <input
             type="number"
@@ -61,10 +63,12 @@ const Bmi = () => {
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
+        </div>
 
-          <button type="submit">Calculate BMI</button>
-        </form>
-      </div>
+        <button className={style.bmi_button} type="submit">
+          Calculate BMI
+        </button>
+      </form>
     </div>
   )
 }
