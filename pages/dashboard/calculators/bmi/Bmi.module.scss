@@ -8,6 +8,14 @@
   flex-direction: column;
   p {
     padding: 0 2rem 2rem 2rem;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 145%;
+
+    color: var(--light-black-color);
   }
   form {
     padding: 0 2rem 2rem 2rem;
