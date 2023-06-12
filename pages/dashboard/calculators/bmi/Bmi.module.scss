@@ -17,5 +17,6 @@
 }
 
 .bmi_button {
-  @extend .button_type1;
+  @extend .button_type2;
+  width: 400px;
 }

@@ -13,6 +13,7 @@
   --white-color: #ffffff;
   --light-white-color: #f7f8f8;
   --gray-color: #7b6f72;
+  --light-black-color: #3b444b;
 }
 
 @media (prefers-color-scheme: dark) {

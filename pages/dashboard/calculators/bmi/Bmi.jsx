@@ -66,7 +66,7 @@ const Bmi = () => {
         </div>
 
         <button className={style.bmi_button} type="submit">
-          Calculate BMI
+          Submit Now
         </button>
       </form>
     </div>

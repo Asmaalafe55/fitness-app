@@ -15,7 +15,39 @@
   color: var(--white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .button_type2 {
+  height: 60px;
+  width: 200px;
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  background-color: var(--orange-color);
+  color: var(--white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .button_type3 {
+}
+
+.input_type1 {
+  height: 100px;
+  width: 200px;
+  font-family: 'Montserrat';
+  font-size: 30px;
+  background-color: var(--white-color);
+  color: var(--light-black-color);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  cursor: text;
+  border-color: var(--gray-color);
 }
