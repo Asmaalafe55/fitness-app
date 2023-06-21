@@ -29,7 +29,7 @@ const Bmi = () => {
           <input
             type="number"
             id="height"
-            placeholder="Hight / cm"
+            placeholder="Height / cm"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             required
@@ -70,7 +70,7 @@ const Bmi = () => {
         </div>
 
         <button className={style.bmi_button} type="submit">
-          Submit Now
+          Submit
         </button>
       </form>
     </div>
