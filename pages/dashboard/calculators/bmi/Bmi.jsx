@@ -5,7 +5,7 @@ const Bmi = () => {
   const [weight, setWeight] = useState('')
   const [height, setHeight] = useState('')
   const [age, setAge] = useState('')
-  const [gender, setGender] = useState('male')
+  const [gender, setGender] = useState('')
   const [bmi, setBMI] = useState('')
 
   const handleSubmit = (event) => {
@@ -14,6 +14,7 @@ const Bmi = () => {
     const calculatedBMI = weight / (height / 100) ** 2
     setBMI(calculatedBMI.toFixed(2))
   }
+
   return (
     <div className={style.bmi_container}>
       <div className="title">BMI Calculator</div>
@@ -25,41 +26,44 @@ const Bmi = () => {
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="height">Height/cm</label>
           <input
             type="number"
             id="height"
+            placeholder="Hight / cm"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             required
           />
 
-          <label htmlFor="weight">Weigh/kg</label>
           <input
             type="number"
             id="weight"
+            placeholder="Weight / kg"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
             required
           />
         </div>
         <div>
-          <label htmlFor="age">Age</label>
           <input
             type="number"
             id="age"
+            placeholder="Age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
             required
           />
 
-          <label htmlFor="gender">Gender</label>
           <select
+            className={style.custom_select}
             id="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
             required
           >
+            <option disabled selected value="">
+              Gender
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>

@@ -1,5 +1,6 @@
 @import '../../../../styles/Home.module.scss';
 @import '../../../../styles/buttons.module.scss';
+@import '../../../../styles/inputs.module.scss';
 
 .bmi_container {
   @extend .dashboard_style;
@@ -18,9 +19,24 @@
     color: var(--light-black-color);
   }
   form {
-    padding: 0 2rem 2rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    div {
+      display: flex;
+      margin: 2rem 0;
+
+      input {
+        @extend .input_type1;
+        margin: 0 2rem;
+      }
+      select {
+        @extend .input_type1;
+        margin: 0 2rem;
+      }
+    }
   }
 }
 
